@@ -4,14 +4,17 @@ import { prisma } from "@/lib/db";
 
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getSession();
-    if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    if (!session)
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     const { status } = await request.json();
-    const requestId = params.id;
+
+    // ✅ FIX: await params
+    const { id: requestId } = await context.params;
 
     const requestRecord = await prisma.exchangeRequest.update({
       where: { id: requestId },
@@ -24,6 +27,9 @@ export async function PUT(
     return NextResponse.json(requestRecord);
   } catch (error) {
     console.error("Error updating request status:", error);
-    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Internal Server Error" },
+      { status: 500 }
+    );
   }
 }
