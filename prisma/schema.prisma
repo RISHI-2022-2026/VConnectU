@@ -6,12 +6,12 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   email     String   @unique
   password  String
   name      String
@@ -78,8 +78,8 @@ model User {
 }
 
 model SkillQuiz {
-  id            String   @id @default(uuid())
-  userId        String
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId        String   @db.ObjectId
   skillName     String
   difficulty    String   @default("beginner") // 'beginner', 'intermediate', 'advanced'
   questions     String   // JSON string storing questions
@@ -94,9 +94,9 @@ model SkillQuiz {
 }
 
 model ExchangeRequest {
-  id             String   @id @default(uuid())
-  fromUserId     String
-  toUserId       String
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  fromUserId     String   @db.ObjectId
+  toUserId       String   @db.ObjectId
   offeredSkill   String
   requestedSkill String
   message        String?
@@ -109,10 +109,10 @@ model ExchangeRequest {
 }
 
 model ExchangeFeedback {
-  id          String   @id @default(uuid())
-  requestId   String
-  fromUserId  String
-  toUserId    String
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  requestId   String   @db.ObjectId
+  fromUserId  String   @db.ObjectId
+  toUserId    String   @db.ObjectId
   stars       Int
   comment     String?
   createdAt   DateTime @default(now())
@@ -122,9 +122,9 @@ model ExchangeFeedback {
 }
 
 model Message {
-  id          String   @id @default(uuid())
-  senderId    String
-  receiverId  String
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  senderId    String   @db.ObjectId
+  receiverId  String   @db.ObjectId
   content     String
   timestamp   DateTime @default(now())
   read        Boolean  @default(false)
@@ -142,7 +142,7 @@ enum QualificationLevel {
 }
 
 model Job {
-  id          String   @id @default(uuid())
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   description String
   company     String
@@ -159,16 +159,16 @@ model Job {
   examDate             DateTime?
   examMode             String?   // "Online" or "Offline"
   link                 String?   // URL to the official job posting
-
+  
   createdAt DateTime @default(now())
   
   applications Application[]
 }
 
 model Application {
-  id        String   @id @default(uuid())
-  userId    String
-  jobId     String
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  jobId     String   @db.ObjectId
   status    String   @default("PENDING") // PENDING, ACCEPTED, REJECTED
   appliedAt DateTime @default(now())
 
@@ -177,7 +177,7 @@ model Application {
 }
 
 model Competition {
-  id          String   @id @default(uuid())
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   platform    String   // e.g., LeetCode, CodeChef, HackerRank
   description String?
@@ -191,7 +191,7 @@ model Competition {
 }
 
 model ResearchPaper {
-  id          String   @id @default(uuid())
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   publisher   String   // e.g., IEEE, ACM, Nature
   conference  String?  // e.g., ICML, NeurIPS
@@ -204,7 +204,7 @@ model ResearchPaper {
 }
 
 model Idea {
-  id           String   @id @default(uuid())
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
   title        String
   problem      String
   solution     String
@@ -212,7 +212,7 @@ model Idea {
   impact       String
   contactEmail String
   contactPhone String
-  userId       String
+  userId       String   @db.ObjectId
   user         User     @relation(fields: [userId], references: [id])
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
