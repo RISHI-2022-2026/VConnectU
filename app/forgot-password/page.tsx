@@ -47,7 +47,7 @@ export default function ForgotPasswordPage() {
             <div className="w-full max-w-md space-y-10 relative z-10">
                 <div className="text-center">
                     <Link href="/" className="text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 tracking-tighter">
-                        VconnectU
+                        VConnectU x Skillvouch AI
                     </Link>
                     <h2 className="mt-8 text-3xl font-black tracking-tight text-slate-900">Forgot Password?</h2>
                     <p className="mt-2 text-slate-500 font-medium">

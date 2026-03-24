@@ -109,7 +109,7 @@ export default function DashboardLayout({
                             <Menu className="w-6 h-6 text-slate-600" />
                         </button>
                         <Link href="/dashboard" className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-                            VconnectU
+                            VConnectU x Skillvouch AI
                         </Link>
                     </div>
 

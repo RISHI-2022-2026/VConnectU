@@ -20,7 +20,7 @@ export function Chatbot() {
             {
                 id: "1",
                 role: "bot",
-                content: "Hello! I'm your VconnectU assistant. How can I help you today?",
+                content: "Hello! I'm your VConnectU x Skillvouch AI assistant. How can I help you today?",
                 timestamp: new Date(),
             },
         ]);
@@ -174,7 +174,7 @@ export function Chatbot() {
                             Live Support
                         </div>
                         <h3 className="font-black text-2xl flex items-center gap-3 tracking-tight">
-                            VconnectU AI
+                            VConnectU x Skillvouch AI
                         </h3>
                         <p className="text-slate-400 text-xs mt-1 font-medium italic">Ask me about jobs, resumes, or ideas!</p>
                     </div>

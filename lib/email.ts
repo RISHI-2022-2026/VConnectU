@@ -16,12 +16,12 @@ export async function sendResetPasswordEmail(email: string, resetUrl: string) {
     });
 
     const mailOptions = {
-        from: '"VconnectU Support" <support@vconnectu.com>',
+        from: '"VConnectU x Skillvouch AI Support" <support@vconnectu.com>',
         to: email,
-        subject: "Reset Your Password - VconnectU",
+        subject: "Reset Your Password - VConnectU x Skillvouch AI",
         html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #e0e0e0; rounded-lg">
-        <h2 style="color: #4a148c; text-align: center;">VconnectU</h2>
+        <h2 style="color: #4a148c; text-align: center;">VConnectU x Skillvouch AI</h2>
         <p>Hi,</p>
         <p>You requested to reset your password. Click the button below to set a new password:</p>
         <div style="text-align: center; margin: 30px 0;">
@@ -30,7 +30,7 @@ export async function sendResetPasswordEmail(email: string, resetUrl: string) {
         <p>If you didn't request this, you can safely ignore this email.</p>
         <p>The link will expire in 1 hour.</p>
         <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
-        <p style="font-size: 12px; color: #777; text-align: center;">VconnectU - Connecting Professionals</p>
+        <p style="font-size: 12px; color: #777; text-align: center;">VConnectU x Skillvouch AI - Connecting Professionals</p>
       </div>
     `,
     };

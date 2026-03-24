@@ -4,7 +4,7 @@ const queries = [
     "How can I find a job?",
     "Tell me about mock interviews",
     "How do I update my resume?",
-    "What is VconnectU?",
+    "What is VConnectU x Skillvouch AI?",
     "Hello bot"
 ];
 

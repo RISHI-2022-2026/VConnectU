@@ -74,7 +74,7 @@ export const CHAT_KNOWLEDGE_BASE: ChatIntent[] = [
     {
         id: "greeting",
         keywords: ["hello", "hi", "hey", "greetings", "good morning", "good evening"],
-        response: "Hello! I'm your VconnectU Assistant. How can I help you navigate the platform today?",
+        response: "Hello! I'm your VConnectU x Skillvouch AI Assistant. How can I help you navigate the platform today?",
         category: "general"
     },
     {
@@ -84,9 +84,9 @@ export const CHAT_KNOWLEDGE_BASE: ChatIntent[] = [
         category: "general"
     },
     {
-        id: "about_vconnectu",
-        keywords: ["what is vconnectu", "about platform", "what do you do"],
-        response: "VconnectU is a comprehensive career platform designed to bridge the gap between talent and opportunity. We offer job listings, AI-driven interview prep, resume analysis, and skill-building competitions.",
+        id: "about_platform",
+        keywords: ["what is vconnectu", "what is skillvouch", "skillvouch ai", "about platform", "what do you do"],
+        response: "VConnectU x Skillvouch AI is a comprehensive career platform designed to bridge the gap between talent and opportunity. We offer job listings, AI-driven interview prep, resume analysis, and skill-building competitions.",
         category: "general"
     }
 ];

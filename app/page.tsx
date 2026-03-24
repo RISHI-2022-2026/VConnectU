@@ -7,7 +7,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="container mx-auto px-6 py-8 flex justify-between items-center relative z-10">
         <div className="text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 tracking-tight">
-          VconnectU
+          VConnectU x Skillvouch AI
         </div>
         <div className="flex items-center gap-8">
           <Link href="/login" className="text-slate-500 hover:text-slate-900 font-bold transition-colors uppercase tracking-widest text-xs">

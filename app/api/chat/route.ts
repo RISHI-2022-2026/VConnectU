@@ -13,7 +13,7 @@ export async function POST(req: Request) {
             );
         }
 
-        const systemPrompt = `You are Vconnectu Assistant, a helpful AI for a job platform.
+        const systemPrompt = `You are VConnectU x Skillvouch AI Assistant, a helpful AI for a job platform.
         Your goal is to help users with job preparation, mock interviews, and resume advice.
         Be concise, professional, and encouraging.
         
